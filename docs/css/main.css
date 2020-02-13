@@ -1,0 +1,71 @@
+/* Main CSS Variables */
+
+* {
+  --lightgreen: #e0ffc3;
+  --lightblue: #c1c8f0;
+  --lightred: #ffc8c8;
+
+  padding: 0;
+  margin: 0;
+
+  text-align: center;
+}
+button {
+  font-size: 20px;
+}
+input {
+  font-size: 20px;
+}
+
+header {
+  text-align: center;
+  background-color: var(--lightgreen);
+  padding: 10px;
+}
+body {
+  font-size: 22px;
+  background-color: var(--lightblue);
+}
+li {
+  list-style: none;
+  padding: 15px 5px;
+}
+a {
+  color: grey;
+  text-decoration: none;
+}
+
+table {
+  /* border: solid 1px #ebebeb; */
+  border-radius: 5px;
+  margin: 1rem;
+  padding: 10px;
+  background-color: #f3f3f3;
+}
+td {
+  border-bottom: solid 1px #bbbbbb;
+  border-right: solid 1px #bbbbbb;
+
+  margin: 2px, 5px;
+  padding: 5px;
+}
+#logo {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  color: var(--lightred);
+}
+
+.hide {
+  position: absolute;
+  opacity: 0;
+  z-index: -10;
+}
+.productListItem > img {
+  transform: scale(0.6);
+}
+.underline {
+  text-decoration: underline;
+}
