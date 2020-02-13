@@ -2,7 +2,7 @@
 
 <!-- Add a link to your live demo in Github Pages 🌐-->
 
-## Live Demo: www.example.com
+## Live Demo: https://stanargy.github.io/web-app-from-scratch-1920/docs/index.html
 
 ## Table of contents
 
