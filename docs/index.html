@@ -5,37 +5,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="./css/main.css" />
-    <title>Document</title>
+    <link rel="stylesheet" href="./css/media.css" />
+    <title>
+      whatthefood.com | Easily monitor your personal dietary intake.
+    </title>
   </head>
+
   <body>
-    <header>
-      <h1>Nutri-App</h1>
-      <img id="logo" src="./assets/forkknife.svg" alt="a fork and a knife" />
-      <p>
-        Easily select your favorite products and view their nutritional value.
-        <br />Tip! You can create an overview of the nutrients of
-        <span class="underline">multiple</span> products by clicking the -Add to
-        Selection- button
-      </p>
-    </header>
-    <section id="hud">
-      <ul>
-        <li>
-          <p>Number of products Selected: <span id="counter">0</span></p>
-        </li>
-        <li><button>Analyze Products</button></li>
-        <li>
-          <button id="clearLocalStorageBtn">Clear selected Products</button>
-        </li>
-        <li>
-          <input id="foodQuery" type="text" placeholder="Type a Food" />
-        </li>
-      </ul>
-    </section>
+    <div class="wrapperHero">
+      <!-- ------------------------------------------------------------------- -->
+      <header>
+        <a href="./index.html">
+          <h1>
+            <span class="t1">What The </span>
+            <span class="t2">Food</span>
+            <span class="t3">?</span>
+          </h1>
+          <!-- <img
+            id="logo"
+            src="./assets/forkknife.svg"
+            alt="a fork and a knife"
+          /> -->
+        </a>
+        <p>
+          Easily select your favorite products and view their nutritional value.
+          <br />
+          <b>Tip!</b> You can create an overview of nutrients from
+          <span class="underline">multiple</span> products by clicking the -Add
+          to Selection- button
+        </p>
+      </header>
+
+      <!-- ------------------------------------------------------------------- -->
+
+      <section id="hud">
+        <ul>
+          <li>
+            <input
+              pattern="[A-Za-z0-9/g"
+              id="foodQuery"
+              type="text"
+              placeholder="Type a Food"
+            />
+          </li>
+          <li>
+            <p>Number of products Selected: <span id="counter">0</span></p>
+          </li>
+          <li><button id="analyzeProducts">Analyze Products</button></li>
+          <li>
+            <button id="clearLocalStorageBtn">Clear selected Products</button>
+          </li>
+        </ul>
+      </section>
+      <section id="dataContainer"></section>
+    </div>
+
+    <!-- ------------------------------------------------------------------- -->
     <!-- <canvas width="500" id="myChart"></canvas> -->
 
-    <section id="dataContainer"></section>
-
+    <!-- ------------------------------------------------------------------- -->
     <!-- Transparancy.js template engine -->
     <script src="js/transparency.min.js" type="module"></script>
     <!-- Router implementation with Routie -->

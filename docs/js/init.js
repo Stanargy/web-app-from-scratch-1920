@@ -6,6 +6,7 @@ const init = {
   now: () => {
     //   console.log("init fired");
     const foodQuery = document.querySelector("#foodQuery");
+    init.startCounter();
 
     events.ActivateClearLocalStorageBtn();
 
@@ -28,6 +29,17 @@ const init = {
     console.log(
       `please provide more than 5 character query. Current querylength = ${query.length}`
     ); // add feature user feedback!
+  },
+  startCounter: () => {
+    const el = document.querySelector("#counter");
+    let storedTotalId = localStorage.getItem("selected");
+    console.log(typeof storedTotalId);
+    if (storedTotalId != null && storedTotalId.split(",")) {
+      storedTotalId = storedTotalId.split(",");
+      el.innerText = storedTotalId.length;
+    } else {
+      el.innerText = localStorage.getItem("selected");
+    }
   }
 };
 

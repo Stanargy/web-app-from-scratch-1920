@@ -37,21 +37,26 @@ const renderData = {
           //  console.log("verified data");
           // console.log(data);
           // debugger;
-          const classifiedProduct = dataHandler.createClasses(data.description); // create classes for each item based on description
-          const title = dataHandler.firstWord(data.description);
+          // console.log(typeof product);
+          if (typeof product == "string") {
+            product = JSON.parse(product);
+            // console.log(typeof product);
+          }
+          const classifiedProduct = dataHandler.createClasses(product); // create classes for each item based on description
+          const title = dataHandler.firstWord(product);
           el.innerHTML = `
 
-          <a href="#showme/${data.fdcId}" id=${data.fdcId} class="${classifiedProduct} productListItem" >
+          <a href="#showme/${product.fdcId}" id=${product.fdcId} class="${classifiedProduct} productListItem" >
           <p>${title}</p>
           </n>
           
-          <span><p>${data.foodPortions[0].gramWeight} gram / portion</p>
+          <span><p>${product.foodPortions[0].gramWeight} gram / portion</p>
           
           </span>
           </a>
-          <button class="add${data.fdcId}">Add To Selection!</button>
+          <button class="add${product.fdcId}">Add To Selection!</button>
         `;
-          events.listenSelect(el.querySelector(`.add${data.fdcId}`));
+          events.listenSelect(el.querySelector(`.add${product.fdcId}`));
         });
       })
       .catch(err => console.error(err));
@@ -88,6 +93,7 @@ const renderData = {
       "fat",
       "Sugar"
     ];
+
     // define tables
     const tableMacro = document.createElement("table");
     const tableMicro = document.createElement("table");
